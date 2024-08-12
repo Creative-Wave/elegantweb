@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.coolBeans {
+  border: 2px solid currentColor;
+  border-radius: 1rem;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  overflow: hidden;
+  padding: 30px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+
+.coolBeans::after {
+  background-color: yellow;
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.coolBeans:hover::after {
+  transform: translate(0, 0);
+}
+
+.coolBeans:hover {
+  border: 2px solid transparent;
+  color: #e11207;
+  transform: scale(1.05);
+  will-change: transform;
+}
+/* Add this to your CSS file */
+.slider .slick-slide {
+  padding: 0;
+}
+
+.slider .slick-slide > div {
+  margin: 0;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+input[type="number"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
